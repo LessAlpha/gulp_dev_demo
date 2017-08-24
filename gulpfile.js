@@ -16,7 +16,6 @@ var concat = require('gulp-concat');
 
 var handleError = function (err) {
     var colors = gutil.colors;
-    console.log('\n');
     gutil.log(colors.red('Error!'))
     gutil.log('fileName: ' + colors.red(err.fileName))
     gutil.log('lineNumber: ' + colors.red(err.lineNumber))
@@ -38,11 +37,11 @@ var logChange = function(type,path) {
 }
 // 合并JS文件
 gulp.task('concatJs',function(){
-    // gulp.src([''])// 需要合并的文件
-    //     .pipe(sourcemaps.init())
-    //     .pipe(concat('all.js'))// 合并到all.js中
-    //     .pipe(sourcemaps.write())
-    //     .pipe(gulp.dest('dist/js'));// 输出到的目录
+    gulp.src(['src/egret_game/*.js', 'src/egret_game/libs/*/*.js', 'src/egret_game/libs/*.js', 'src/egret_game/libs/*/modules/*.js'])// 需要合并的文件
+        .pipe(sourcemaps.init())
+        .pipe(concat('game.min.js'))// 合并到文件名
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('dist/egret_game/'));// 输出到的目录
 })
 
 gulp.task('watchjs', function () {

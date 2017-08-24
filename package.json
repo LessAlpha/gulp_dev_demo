@@ -4,8 +4,9 @@
   "description": "Using gulp build a project instance. Link: https://github.com/nimojs/gulp-book/blob/master/chapter7.md",
   "main": "gulpfile.js",
   "devDependencies": {
-    "gulp": "^3.8.11",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "^2.1.0",
+    "gulp-concat": "^2.6.1",
     "gulp-declare": "^0.3.0",
     "gulp-handlebars": "^4.0.0",
     "gulp-imagemin": "^2.2.1",
